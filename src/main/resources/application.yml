@@ -1,0 +1,31 @@
+#server
+server:
+  port: 8000
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+    # 브라우저 콘속 확인시에 확인이 간편하게 하기 위해서
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  # h2 콘솔을 브라우저에서 바로 접속 할 수 있도록 해줌
+  h2:
+    console:
+      enabled: true
+  jpa:
+    # 초기 데이터 입력이 테이블이 다 생성된 이후에 되도록 해줌.
+    defer-datasource-initialization: true
+    database-platform: H2
+    hibernate:
+      # create-drop
+      # application 기동하는 시점에 테이블을 작성해주고
+      # 종료하는 시점에 테이블을 삭제해줌(운영시에는 절대 사용 금지!!)
+      ddl-auto: create-drop
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true

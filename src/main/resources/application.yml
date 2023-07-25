@@ -17,6 +17,7 @@ spring:
       enabled: true
   jpa:
     # 초기 데이터 입력이 테이블이 다 생성된 이후에 되도록 해줌.
+    #(이게 있어야 resources밑에 data.sql안에 insert문이 제대로 동작됨)
     defer-datasource-initialization: true
     database-platform: H2
     hibernate:

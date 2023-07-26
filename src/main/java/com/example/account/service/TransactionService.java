@@ -128,4 +128,10 @@ public class TransactionService {
                 .orElseThrow(() -> new AccountException(ACCOUNT_NOT_FOUND));
         saveAndGetTransaction(CANCEL, F, amount, account);
     }
+
+    public TransactionDto queryTransaction(String transactionId) {
+        return TransactionDto.fromEntity(
+            transactionRepository.findByTransactionId(transactionId)
+                .orElseThrow(() -> new AccountException(TRANSACTION_NOT_FOUND)));
+    }
 }

@@ -1,3 +1,7 @@
+GET http://localhost:8000/transaction/9b11bbdb874a4a3dab918da0a43ffa16
+Accept: application/json
+
+###
 ### use balance
 POST http://localhost:8000/transaction/use
 Content-Type: application/json
@@ -13,8 +17,8 @@ POST http://localhost:8000/transaction/cancel
 Content-Type: application/json
 
 {
-  "transactionId": "f9e90e81590f4c739ed6f97067e101f9",
+  "transactionId": "c23ac77a9f234006acd5f4fa69ee80d6",
   "accountNumber": "1000000001",
-  "amount": 100000
+  "amount": 200000
 }
 ###
